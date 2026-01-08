@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3c24ba99-398f-4a5b-8334-c0dfd942acde</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tavaline_fail.py</StartupFile>
+    <StartupFile>module1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,7 @@
     <Compile Include="funktsioonid.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="module1.py" />
     <Compile Include="Tavaline_fail.py">
       <SubType>Code</SubType>
     </Compile>
