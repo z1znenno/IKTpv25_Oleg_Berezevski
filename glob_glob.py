@@ -26,5 +26,27 @@ def loe_failist(failinimi : str, mark : str) -> list:
         marked_words = loend.count(mark)
     return loend, kokku_rida, tuhi_rida, marked_words
 
-def loo():
-    pass
+def loo_raporti_kataoog(nimi, mis_sisse, read, tuhi_read, minu_sõnu):
+    if not os.path.exists(nimi):
+        print("Loome uus kataloog...")
+        os.mkdir(nimi)
+        print("Uus kataloog on loodud")
+    os.chdir(nimi)
+    loend = []
+    loend.append(str(mis_sisse))
+    loend.append(str(read))
+    loend.append(str(tuhi_read))
+    loend.append(str(minu_sõnu))
+    with open("Analüüs", "w") as f:
+        for rida in loend:
+            f.write(rida + "\n")
+    print("Sinu analüüs asub kataloogis: Analüüsi_Raportid")
+
+def leia_failid_algustahega(taht : str):
+    return glob.glob(f"{taht}*.*")
+
+def otsi_faili(faili_nimi, otsingu_tee="."):
+    for juur, kaustad, failid in os.walk(otsingu_tee):
+        if faili_nimi in failid:
+            return os.path.join(juur, failinimi)
+    return "Faili ei leitud"

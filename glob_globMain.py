@@ -15,10 +15,17 @@ while True:
         break
     else:
         print("Proovige uuesti!")
-marked_word = input("Mis sõna te otsite failis?")
+marked_word = input("Mis sõna te otsite failis? ")
 sisu, read, tuhi_read, minu_sõna = glob_glob.loe_failist(koik_failid[valik], marked_word)
 print(sisu)
 print(read)
 print(tuhi_read)
 print(minu_sõna)
-
+nimi = "Analüüsi_Raportid"
+glob_glob.loo_raporti_kataoog(nimi, sisu, read, tuhi_read, minu_sõna)
+taht = input("Mis fail tahate leia? ")
+fail = glob_glob.leia_failid_algustahega(taht)
+print(fail)
+otsitav_fail = input("Sisestaotsitava faili nimi (nt. minu_fail.txt): ")
+tulemus = glob_glob.otsi_faili(otsitav_fail)
+print(tulemus)
